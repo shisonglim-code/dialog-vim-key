@@ -118,13 +118,13 @@ while [ $# -gt 0 ]; do
 			lib_check=`echo "x$opt" | sed -e 's/^.-L//'`
 			[ -d "$lib_check" ] || continue
 			case "$lib_check" in
-			/lib/x86_64-linux-gnu|/usr/lib/x86_64-linux-gnu|/lib64|/usr/local/lib|/lib|/usr/lib) # skip standard libdir
+			/lib/x86_64-linux-gnu|/usr/lib/x86_64-linux-gnu|/lib64|/usr/lib64|/usr/local/lib|/lib|/usr/lib) # skip standard libdir
 				if [ "$lib_check" = "$libdir" ]
 				then
 					lib_first=yes
 					IFS_save="$IFS"
 					IFS='|'
-					LIBDIRS="/lib/x86_64-linux-gnu|/usr/lib/x86_64-linux-gnu|/lib64|/usr/local/lib|/lib|/usr/lib"
+					LIBDIRS="/lib/x86_64-linux-gnu|/usr/lib/x86_64-linux-gnu|/lib64|/usr/lib64|/usr/local/lib|/lib|/usr/lib"
 					for lib_check in $LIBDIRS
 					do
 						if [ -d "$lib_check" ]

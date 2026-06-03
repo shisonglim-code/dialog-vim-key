@@ -366,7 +366,7 @@ s,@HAVE_STDNORETURN_H@,0,;t t
 s,@STDC_NORETURN@,,;t t
 s,@PKG_CONFIG@,/usr/bin/pkg-config,;t t
 s,@ac_pt_PKG_CONFIG@,/usr/bin/pkg-config,;t t
-s,@PKG_CONFIG_LIBDIR@,/usr/lib/x86_64-linux-gnu/pkgconfig,;t t
+s,@PKG_CONFIG_LIBDIR@,/usr/local/lib/pkgconfig,;t t
 s,@MAKE_PC_FILES@,#,;t t
 s,@VERSION@,15:0:0,;t t
 s,@VERSION_MAJOR@,1,;t t
@@ -462,7 +462,7 @@ LIB_TARGET	= ${LIB_BASENAME}
 RM_SHARED_OPTS	= 
 # end CF__DEFINE_SHLIB_VARS,;t t
 s,@LIB_TARGET@,${LIB_BASENAME},;t t
-s,@LD_SEARCHPATH@,/lib/x86_64-linux-gnu|/usr/lib/x86_64-linux-gnu|/lib64|/usr/local/lib|/lib|/usr/lib,;t t
+s,@LD_SEARCHPATH@,/lib/x86_64-linux-gnu|/usr/lib/x86_64-linux-gnu|/lib64|/usr/lib64|/usr/local/lib|/lib|/usr/lib,;t t
 CEOF
 
   # Split the substitutions into bite-sized pieces for seds with
@@ -780,6 +780,7 @@ echo "$as_me: error: cannot find input file: $f" >&2;}
   rm -f conftest.frag
   cat >> conftest.frag <<CEOF
 
+#define CURSES_WACS_ARRAY _nc_wacs
 #define DIALOG_PATCHDATE 20260107
 #define DIALOG_VERSION "1.3"
 #define GCC_NORETURN __attribute__((noreturn))
@@ -796,6 +797,7 @@ echo "$as_me: error: cannot find input file: $f" >&2;}
 #define HAVE_DLG_MIXEDFORM 1
 #define HAVE_DLG_TAILBOX 1
 #define HAVE_DLG_TRACE 1
+#define HAVE_EXIT_CURSES 1
 #define HAVE_FLUSHINP 1
 #define HAVE_FSEEKO 1
 #define HAVE_GETATTRS 1
@@ -815,10 +817,10 @@ echo "$as_me: error: cannot find input file: $f" >&2;}
 #define HAVE_LANGINFO_CODESET 1
 #define HAVE_MATH_FUNCS 1
 #define HAVE_MBLEN 1
-#define HAVE_MBRLEN 1
-#define HAVE_MBRTOWC 1
 CEOF
   cat >> conftest.frag <<CEOF
+#define HAVE_MBRLEN 1
+#define HAVE_MBRTOWC 1
 #define HAVE_MBSTATE_T 1
 #define HAVE_MBTOWC 1
 #define HAVE_MEMORY_H 1
@@ -855,10 +857,10 @@ CEOF
 #define HAVE_WCHGAT 1
 #define HAVE_WCSRTOMBS 1
 #define HAVE_WCSTOMBS 1
-#define HAVE_WCTOB 1
-#define HAVE_WCTOMB 1
 CEOF
   cat >> conftest.frag <<CEOF
+#define HAVE_WCTOB 1
+#define HAVE_WCTOMB 1
 #define HAVE_WCURSYNCUP 1
 #define HAVE_WGETPARENT 1
 #define HAVE_WHIPTAIL 1

@@ -79,7 +79,7 @@ mandir		= ${datarootdir}/man
 manext		= 1
 libext		= 3
 docdir		= $(datarootdir)/doc/$(PACKAGE)
-pkgconfig_dir	= /usr/lib/x86_64-linux-gnu/pkgconfig
+pkgconfig_dir	= /usr/local/lib/pkgconfig
 
 BINDIR		= $(DESTDIR)$(bindir)
 INCLUDEDIR	= $(DESTDIR)$(includedir)

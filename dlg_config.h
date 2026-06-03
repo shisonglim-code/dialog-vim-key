@@ -3,6 +3,7 @@
  * The configure script expands this as a set of definitions
  */
 
+#define CURSES_WACS_ARRAY _nc_wacs
 #define DIALOG_PATCHDATE 20260107
 #define DIALOG_VERSION "1.3"
 #define GCC_NORETURN __attribute__((noreturn))
@@ -19,6 +20,7 @@
 #define HAVE_DLG_MIXEDFORM 1
 #define HAVE_DLG_TAILBOX 1
 #define HAVE_DLG_TRACE 1
+#define HAVE_EXIT_CURSES 1
 #define HAVE_FLUSHINP 1
 #define HAVE_FSEEKO 1
 #define HAVE_GETATTRS 1
